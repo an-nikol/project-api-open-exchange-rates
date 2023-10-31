@@ -1,32 +1,28 @@
 import requests
 import json
+from datetime import datetime
 
 
-def choice_01():
-    json_dict_all_currencies = response.json()['rates']
-    json_string_all_currencies = json.dumps(json_dict_all_currencies)
-    python_dict_all_currencies = json.loads(json_string_all_currencies)
-    for key in python_dict_all_currencies.keys():
-        print(key, " - ", python_dict_all_currencies[key])
+class Currency:
+    def __init__(self):
+        self.api_key = open('api_key').readline().strip()
+        self.url = f'https://openexchangerates.org/api/latest.json?app_id={self.api_key}'
+        self.output = ''
 
-def choice_02():
-    pass
-
-
-def choice_03():
-    pass
-
-
-def choice_04():
-    pass
-
-
-def choice_05():
-    pass
+    def do_request_01(self):
+        response = requests.get(self.url)
+        if response.status_code == 200:
+            self.output = response.json()['rates']
+            str_response = json.dumps(self.output)
+            dict_response = json.loads(str_response)
+            final_list = []
+            for key in dict_response.keys():
+                print(key, "     -     ", dict_response[key])
+        else:
+            return f'Unexpected error. Type of error: {response.status_code}'
 
 
 while True:
-    response = requests.get('https://openexchangerates.org/api/latest.json?app_id=2a79f1183f864ff19561b6a9e9d09860')
     # i want users to click these icons
     print('Menu')
     print('Please choose one of the options below:')
@@ -39,7 +35,13 @@ while True:
 
     choice = int(input('Enter your choice (1/2/3/4): '))
     if choice == 1:
-        choice_01()
+        # call object
+        current_date = datetime.now().strftime('%d %b %Y')
+        print()
+        print(f'The date of the request: {current_date}')
+        print('Currency - Corresponding rate per 1 USD')
+        choice_01 = Currency()
+        choice_01.do_request_01()
     elif choice == 2:
         pass
     elif choice == 3:
@@ -50,6 +52,3 @@ while True:
         pass
     elif choice == 6:
         pass
-
-
-
