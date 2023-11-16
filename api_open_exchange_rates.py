@@ -230,7 +230,10 @@ while True:
             'ZMW': 'Zambian Kwacha'
         }
 
+        for symbol, currency in dict_symbols_currency.items():
+            print(f'{symbol} ({currency})')
 
+        print()
         chosen_currency = input('Enter one of the currencies to see its corresponding rate per 1 USD')
 
     elif choice == 3:
