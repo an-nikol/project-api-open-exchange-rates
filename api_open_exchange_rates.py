@@ -164,41 +164,72 @@ while True:
             'MZN': 'Mozambican Metical',
             'NAD': 'Namibian Dollar',
             'NGN': 'Nigerian Naira',
-            
-
-
-
-
-
-
+            'NIO': 'Nicaraguan Córdoba',
+            'NOK': 'Norwegian Krone',
+            'NPR': 'Nepalese Rupee',
+            'NZD': 'New Zealand Dollar',
+            'OMR': 'Omani Rial',
+            'PAB': 'Panamanian Balboa',
+            'PEN': 'Peruvian Nuevo Sol',
+            'PGK': 'Papua New Guinean Kina',
+            'PHP': 'Philippine Peso',
+            'PKR': 'Pakistani Rupee',
+            'PLN': 'Polish Zloty',
+            'PYG': 'Paraguayan Guarani',
+            'QAR': 'Qatari Rial',
+            'RON': 'Romanian Leu',
+            'RSD': 'Serbian Dinar',
+            'RUB': 'Russian Ruble',
+            'RWF': 'Rwandan Franc',
+            'SAR': 'Saudi Riyal',
+            'SBD': 'Solomon Islands Dollar',
+            'SCR': 'Seychellois Rupee',
+            'SDG': 'Sudanese Pound',
+            'SEK': 'Swedish Krona',
+            'SGD': 'Singapore Dolla',
+            'SHP': 'Saint Helena Pound',
+            'SLL': 'Sierra Leonean Leone',
+            'SOS': 'Somali Shilling',
+            'SRD': 'Surinamese Dollar',
+            'SSP': 'South Sudanese Pound',
+            'STD': 'São Tomé and Príncipe Dobra(pre - 2018)',
+            'STN': 'São Tomé and Príncipe Dobra',
+            'SVC': 'Salvadoran Colón',
+            'SYP': 'Syrian Pound',
+            'SZL': 'Swazi Lilangeni',
+            'THB': 'Thai Baht',
+            'TJS': 'Tajikistani Somoni',
+            'TMT': 'Turkmenistani Manat',
+            'TND': 'Tunisian Dinar',
+            'TOP': 'Tongan Paʻanga',
+            'TRY': 'Turkish Lira',
+            'TTD': 'Trinidad and Tobago Dollar',
+            'TWD': 'New Taiwan Dollar',
+            'TZS': 'Tanzanian Shilling',
+            'UAH': 'Ukrainian Hryvnia',
+            'UGX': 'Ugandan Shilling',
+            'USD': 'United States Dollar',
+            'UYU': 'Uruguayan Peso',
+            'UZS': 'Uzbekistan Som',
+            'VES': 'Venezuelan Bolívar Soberano',
+            'VND': 'Vietnamese Dong',
+            'VUV': 'Vanuatu Vatu',
+            'WST': 'Samoan Tala',
+            'XAF': 'CFA Franc BEAC',
+            'XAG': 'Silver(troy ounce)',
+            'XAU': 'Gold(troy ounce)',
+            'XCD': 'East Caribbean Dollar',
+            'XDR': 'Special Drawing Rights',
+            'XOF': 'CFA Franc BCEAO',
+            'XPD': 'Palladium Ounce',
+            'XPF': 'CFP Franc',
+            'XPT': 'Platinum Ounce',
+            'YER': 'Yemeni Rial',
+            'ZAR': 'South African Rand',
+            'ZMK': 'Zambian Kwacha(pre - 2013)',
+            'ZMW': 'Zambian Kwacha'
         }
 
-        \n \n \n \n\
-        \n \n  \n \n\
-       \n \n \n \n\
-        \n \n \n \n\
-       \n \n \n\
-       \n \n \n  \n\
-       \n \n \n \n\
-        NIO (Nicaraguan Córdoba)\n NOK (Norwegian Krone)\n NPR (Nepalese Rupee)\n  NZD (New Zealand Dollar)\n\
-        OMR (Omani Rial)\n PAB (Panamanian Balboa)\n PEN (Peruvian Nuevo Sol)\n PGK (Papua New Guinean Kina)\n\
-        PHP	(Philippine Peso)\n PKR (Pakistani Rupee)\n PLN (Polish Zloty)\n PYG (Paraguayan Guarani)\n\
-        QAR (Qatari Rial)\n RON (Romanian Leu)\n RSD (Serbian Dinar)\n RUB (Russian Ruble)\n RWF (Rwandan Franc)\n\
-        SAR (Saudi Riyal)\n SBD (Solomon Islands Dollar)\n SCR (Seychellois Rupee)\n SDG (Sudanese Pound)\n\
-        SEK (Swedish Krona)\n SGD (Singapore Dolla)\n SHP (Saint Helena Pound)\n SLL (Sierra Leonean Leone)\n\
-        SOS (Somali Shilling)\n SRD (Surinamese Dollar)\n SSP (South Sudanese Pound)\n\
-        STD (São Tomé and Príncipe Dobra (pre-2018))\n STN (São Tomé and Príncipe Dobra)\n\
-        SVC	(Salvadoran Colón)\n SYP (Syrian Pound)\n SZL (Swazi Lilangeni)\n THB (Thai Baht)\n\
-        TJS (Tajikistani Somoni)\n TMT (Turkmenistani Manat)\n TND (Tunisian Dinar)\n TOP (Tongan Paʻanga)\n\
-        TRY (Turkish Lira)\n TTD (Trinidad and Tobago Dollar)\n TWD (New Taiwan Dollar)\n TZS (Tanzanian Shilling)\n\
-        UAH (Ukrainian Hryvnia)\n UGX (Ugandan Shilling)\n USD (United States Dollar)\n UYU	(Uruguayan Peso)\n\
-        UZS (Uzbekistan Som)\n VES (Venezuelan Bolívar Soberano)\n VND (Vietnamese Dong)\n VUV (Vanuatu Vatu)\n\
-        WST (Samoan Tala)\n XAF (CFA Franc BEAC)\n XAG (Silver (troy ounce))\n XAU (Gold (troy ounce))\n\
-        XCD (East Caribbean Dollar)\n XDR (Special Drawing Rights)\n XOF (CFA Franc BCEAO)\n XPD (Palladium Ounce)\n\
-        XPF (CFP Franc)\n XPT (Platinum Ounce)\n YER (Yemeni Rial)\n ZAR (South African Rand)\n\
-        ZMK (Zambian Kwacha (pre-2013))\n ZMW (Zambian Kwacha)]
-
-        print(currencies, sep='\n')
 
         chosen_currency = input('Enter one of the currencies to see its corresponding rate per 1 USD')
 
