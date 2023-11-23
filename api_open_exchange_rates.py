@@ -8,7 +8,6 @@ class Currency:
         self.api_key = open('api_key').readline().strip()
         self.url = f'https://openexchangerates.org/api/latest.json?app_id={self.api_key}'
         self.output = ''
-        self.choice_02 = choice_02
 
     def do_request_01(self):
         response = requests.get(self.url)
@@ -21,18 +20,18 @@ class Currency:
         else:
             return f'Unexpected error. Type of error: {response.status_code}'
 
-    # fix me
-    def do_request_02(self):
+    def do_request_02(self, current_currency):
+        self.current_currency = current_currency
+
         response = requests.get(self.url, choice)
         if response.status_code == 200:
             self.output = response.json()['rates']
             str_response = json.dumps(self.output)
             dict_response = json.loads(str_response)
             is_valid_currency = False
-            for curr_symbol in dict_response:
-                if choice_02 == curr_symbol:
-                    is_valid_currency = True
-                    print(f'The current rate for 1 USD is {dict_response[symbol]} {curr_symbol}')
+            if current_currency in dict_response:
+                is_valid_currency = True
+                print(f'The current rate for 1 USD is {dict_response[current_currency]} {current_currency}')
             if not is_valid_currency:
                 print(f'Please enter a valid currency.')
         else:
@@ -241,9 +240,9 @@ while True:
             print(f'{symbol} ({currency})')
 
         print()
-        # fix me
+        
         chosen_currency = input('Enter one of the currencies to see its corresponding rate per 1 USD: ')
-        choice_02 = Currency(chosen_currency)
+        choice_02 = Currency()
         choice_02.do_request_02(chosen_currency)
 
 
