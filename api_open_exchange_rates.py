@@ -213,11 +213,10 @@ class Currency:
                 is_valid_currency = True
                 print(f'The current rate for 1 USD is {dict_response[current_currency]} {current_currency}')
             if not is_valid_currency:
-                print(f'Please enter a valid currency.')
+                print('Please enter a valid currency.')
         else:
             return f'Unexpected error. Type of error: {response.status_code}'
 
-    # fix me
     def do_request_03(self, current_currency, amount):
         self.current_currency = current_currency
         self.amount = amount
@@ -225,12 +224,33 @@ class Currency:
         if response.status_code == 200:
             self.output = response.json()['rates']
             str_response = json.dumps(self.output)
+            is_valid_currency = False
             dict_response = json.loads(str_response)
-
-
-
+            if current_currency in dict_response:
+                is_valid_currency = True
+                result = amount * dict_response[current_currency]
+                print(f'The converted sum is {result}')
+            if not is_valid_currency:
+                print('Please enter a valid currency.')
         else:
             return f'Unexpected error. Type of error: {response.status_code}'
+
+    def do_request_04(self):
+        self.url = f'https://openexchangerates.org/api/usage.json?app_id={self.api_key}'
+        response = requests.get(self.url)
+
+        max_number_of_requests = response.json()['data']['usage']['requests_quota']
+        made_requests = response.json()['data']['usage']['requests']
+        remaining_requests = response.json()['data']['usage']['requests_remaining']
+        days_remaining = response.json()['data']['usage']['days_remaining']
+        daily_average = response.json()['data']['usage']['daily_average']
+
+        print(f'The maximum number of allowed requests per month: {max_number_of_requests}')
+        print(f'The number of requests already made: {made_requests}')
+        print(f'The remaining requests until the end of the month: {remaining_requests}')
+        print(f'Days remaining: {days_remaining}')
+        print(f'Daily average: {daily_average}')
+
 
 while True:
 
@@ -243,7 +263,7 @@ while True:
     print('4. Statistics for usage')
     print('5. Quit')
 
-    choice = int(input('Enter your choice (1/2/3/4): '))
+    choice = int(input('Enter your choice (1/2/3/4/5): '))
     if choice == 1:
         # call object
         current_date = datetime.now().strftime('%d %b %Y')
@@ -265,7 +285,6 @@ while True:
         choice_02.do_request_02(chosen_currency)
 
     elif choice == 3:
-
         for symbol, currency in dict_symbols_currency.items():
             print(f'{symbol} ({currency})')
         type_of_currency = input('Enter one of the currency you would like to convert to USD: ')
@@ -273,9 +292,11 @@ while True:
 
         choice_03 = Currency()
         choice_03.do_request_03(type_of_currency, currency_amount)
+
     elif choice == 4:
-        pass
+        choice_04 = Currency()
+        choice_04.do_request_04()
+
     elif choice == 5:
-        pass
-    elif choice == 6:
-        pass
+        print('Goodbye!')
+        break
